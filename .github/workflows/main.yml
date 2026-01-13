@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'M2_HOME'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                pipeline {
+    agent any
+
+    tools {
+        maven 'M2_HOME'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/YOUR_USERNAME/YOUR_REPO.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean install'
+            }
+        }
+    }
+}
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean install'
+            }
+        }
+    }
+}
